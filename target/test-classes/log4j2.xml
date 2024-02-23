@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug">
+    <Appenders>
+        <File name="RestAssuredLogFile" fileName="target/Booker-%d{yyyy-MM-dd-HH-mm-ss}.log">
+            <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="io.restassured" level="debug" additivity="false">
+            <AppenderRef ref="RestAssuredLogFile"/>
+        </Logger>
+        <Root level="error">
+            <AppenderRef ref="RestAssuredLogFile"/>
+        </Root>
+    </Loggers>
+</Configuration>
